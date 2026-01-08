@@ -1,0 +1,1320 @@
+/* ============================================
+   ОСНОВНЫЕ ПЕРЕМЕННЫЕ И СБРОС СТИЛЕЙ
+   ============================================ */
+
+:root {
+    /* Цвета из оригинального дизайна */
+    --color-primary: #7a8450;
+    --color-primary-dark: #6a7440;
+    --color-beige: #e6dcc8;
+    --color-beige-light: #d4c5a9;
+    --color-white: #ffffff;
+    
+    /* Серые оттенки */
+    --color-gray-50: #f9fafb;
+    --color-gray-100: #f3f4f6;
+    --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5db;
+    --color-gray-400: #9ca3af;
+    --color-gray-500: #6b7280;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1f2937;
+    --color-gray-900: #111827;
+    
+    /* Зеленые для статусов */
+    --color-green-100: #dcfce7;
+    --color-green-600: #16a34a;
+    --color-green-700: #15803d;
+    --color-green-800: #166534;
+    
+    /* Оранжевые для статусов */
+    --color-orange-100: #ffedd5;
+    --color-orange-800: #9a3412;
+    
+    /* Размеры */
+    --container-max-width: 1200px;
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 0.75rem;
+    --border-radius-xl: 1rem;
+    --border-radius-2xl: 1rem;
+    --border-radius-3xl: 1.5rem;
+    --border-radius-full: 9999px;
+}
+
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-gray-800);
+    background-color: var(--color-white);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   УТИЛИТЫ КОНТЕЙНЕРА
+   ============================================ */
+
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================
+   DISPLAY УТИЛИТЫ
+   ============================================ */
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .md\:flex {
+        display: flex;
+    }
+    
+    .md\:hidden {
+        display: none;
+    }
+    
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 640px) {
+    .sm\:flex-row {
+        flex-direction: row;
+    }
+}
+
+/* ============================================
+   FLEXBOX УТИЛИТЫ
+   ============================================ */
+
+.items-center {
+    align-items: center;
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.gap-3 {
+    gap: 0.75rem;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.gap-6 {
+    gap: 1.5rem;
+}
+
+.gap-8 {
+    gap: 2rem;
+}
+
+.gap-12 {
+    gap: 3rem;
+}
+
+/* ============================================
+   GRID УТИЛИТЫ
+   ============================================ */
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* ============================================
+   POSITIONING УТИЛИТЫ
+   ============================================ */
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.sticky {
+    position: sticky;
+}
+
+.inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.top-0 {
+    top: 0;
+}
+
+.top-10 {
+    top: 2.5rem;
+}
+
+.top-20 {
+    top: 5rem;
+}
+
+.top-1\/2 {
+    top: 50%;
+}
+
+.bottom-10 {
+    bottom: 2.5rem;
+}
+
+.bottom-20 {
+    bottom: 5rem;
+}
+
+.left-0 {
+    left: 0;
+}
+
+.left-10 {
+    left: 2.5rem;
+}
+
+.right-0 {
+    right: 0;
+}
+
+.right-10 {
+    right: 2.5rem;
+}
+
+.right-1\/4 {
+    right: 25%;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+.z-50 {
+    z-index: 50;
+}
+
+/* ============================================
+   SIZING УТИЛИТЫ
+   ============================================ */
+
+.w-4 {
+    width: 1rem;
+}
+
+.w-5 {
+    width: 1.25rem;
+}
+
+.w-6 {
+    width: 1.5rem;
+}
+
+.w-7 {
+    width: 1.75rem;
+}
+
+.w-8 {
+    width: 2rem;
+}
+
+.w-10 {
+    width: 2.5rem;
+}
+
+.w-12 {
+    width: 3rem;
+}
+
+.w-16 {
+    width: 4rem;
+}
+
+.w-20 {
+    width: 5rem;
+}
+
+.w-24 {
+    width: 6rem;
+}
+
+.w-32 {
+    width: 8rem;
+}
+
+.w-40 {
+    width: 10rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-4 {
+    height: 1rem;
+}
+
+.h-5 {
+    height: 1.25rem;
+}
+
+.h-6 {
+    height: 1.5rem;
+}
+
+.h-7 {
+    height: 1.75rem;
+}
+
+.h-8 {
+    height: 2rem;
+}
+
+.h-10 {
+    height: 2.5rem;
+}
+
+.h-12 {
+    height: 3rem;
+}
+
+.h-16 {
+    height: 4rem;
+}
+
+.h-20 {
+    height: 5rem;
+}
+
+.h-24 {
+    height: 6rem;
+}
+
+.h-32 {
+    height: 8rem;
+}
+
+.h-\[400px\] {
+    height: 400px;
+}
+
+.h-auto {
+    height: auto;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.max-w-lg {
+    max-width: 32rem;
+}
+
+.max-w-2xl {
+    max-width: 42rem;
+}
+
+.max-w-3xl {
+    max-width: 48rem;
+}
+
+.max-h-\[90vh\] {
+    max-height: 90vh;
+}
+
+.max-h-\[350px\] {
+    max-height: 350px;
+}
+
+/* ============================================
+   SPACING УТИЛИТЫ
+   ============================================ */
+
+.p-2 {
+    padding: 0.5rem;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.p-8 {
+    padding: 2rem;
+}
+
+.p-12 {
+    padding: 3rem;
+}
+
+.px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.mb-1 {
+    margin-bottom: 0.25rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.mb-12 {
+    margin-bottom: 3rem;
+}
+
+.mb-16 {
+    margin-bottom: 4rem;
+}
+
+.mt-1 {
+    margin-top: 0.25rem;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.mt-6 {
+    margin-top: 1.5rem;
+}
+
+.mt-8 {
+    margin-top: 2rem;
+}
+
+.pb-4 {
+    padding-bottom: 1rem;
+}
+
+.pb-6 {
+    padding-bottom: 1.5rem;
+}
+
+.pt-8 {
+    padding-top: 2rem;
+}
+
+/* ============================================
+   TYPOGRAPHY УТИЛИТЫ
+   ============================================ */
+
+.text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
+
+.text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.leading-relaxed {
+    line-height: 1.625;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* ============================================
+   COLOR УТИЛИТЫ
+   ============================================ */
+
+.text-white {
+    color: var(--color-white);
+}
+
+.text-gray-600 {
+    color: var(--color-gray-600);
+}
+
+.text-gray-700 {
+    color: var(--color-gray-700);
+}
+
+.text-gray-800 {
+    color: var(--color-gray-800);
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-green-600 {
+    color: var(--color-green-600);
+}
+
+.text-green-700 {
+    color: var(--color-green-700);
+}
+
+.text-green-800 {
+    color: var(--color-green-800);
+}
+
+.text-orange-800 {
+    color: var(--color-orange-800);
+}
+
+.text-white\/70 {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.text-white\/80 {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.text-white\/90 {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.bg-white {
+    background-color: var(--color-white);
+}
+
+.bg-primary {
+    background-color: var(--color-primary);
+}
+
+.bg-primary-dark {
+    background-color: var(--color-primary-dark);
+}
+
+.bg-gray-200 {
+    background-color: var(--color-gray-200);
+}
+
+.bg-green-100 {
+    background-color: var(--color-green-100);
+}
+
+.bg-orange-100 {
+    background-color: var(--color-orange-100);
+}
+
+.bg-black\/50 {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bg-white\/10 {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bg-white\/20 {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.bg-beige\/30 {
+    background-color: rgba(230, 220, 200, 0.3);
+}
+
+/* ============================================
+   GRADIENT УТИЛИТЫ
+   ============================================ */
+
+.bg-gradient-to-br {
+    background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.from-\[#d4c5a9\] {
+    --tw-gradient-from: #d4c5a9;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(212, 197, 169, 0));
+}
+
+.via-\[#e6dcc8\] {
+    --tw-gradient-to: #e6dcc8;
+}
+
+.to-white {
+    --tw-gradient-to: #ffffff;
+}
+
+.from-\[#7a8450\] {
+    --tw-gradient-from: #7a8450;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(122, 132, 80, 0));
+}
+
+.to-\[#6a7440\] {
+    --tw-gradient-to: #6a7440;
+}
+
+.from-white {
+    --tw-gradient-from: #ffffff;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 255, 255, 0));
+}
+
+.from-\[#e6dcc8\] {
+    --tw-gradient-from: #e6dcc8;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(230, 220, 200, 0));
+}
+
+/* ============================================
+   BORDER УТИЛИТЫ
+   ============================================ */
+
+.border {
+    border-width: 1px;
+}
+
+.border-2 {
+    border-width: 2px;
+}
+
+.border-t {
+    border-top-width: 1px;
+}
+
+.border-b {
+    border-bottom-width: 1px;
+}
+
+.border-gray-200 {
+    border-color: var(--color-gray-200);
+}
+
+.border-gray-300 {
+    border-color: var(--color-gray-300);
+}
+
+.border-primary {
+    border-color: var(--color-primary);
+}
+
+.border-white\/20 {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.border-transparent {
+    border-color: transparent;
+}
+
+.rounded-full {
+    border-radius: var(--border-radius-full);
+}
+
+.rounded-lg {
+    border-radius: var(--border-radius-lg);
+}
+
+.rounded-xl {
+    border-radius: var(--border-radius-xl);
+}
+
+.rounded-2xl {
+    border-radius: var(--border-radius-2xl);
+}
+
+.rounded-3xl {
+    border-radius: var(--border-radius-3xl);
+}
+
+.rounded-t-3xl {
+    border-top-left-radius: var(--border-radius-3xl);
+    border-top-right-radius: var(--border-radius-3xl);
+}
+
+/* ============================================
+   SHADOW УТИЛИТЫ
+   ============================================ */
+
+.shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================
+   OPACITY УТИЛИТЫ
+   ============================================ */
+
+.opacity-5 {
+    opacity: 0.05;
+}
+
+.opacity-10 {
+    opacity: 0.1;
+}
+
+.opacity-20 {
+    opacity: 0.2;
+}
+
+.opacity-80 {
+    opacity: 0.8;
+}
+
+/* ============================================
+   OVERFLOW УТИЛИТЫ
+   ============================================ */
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+/* ============================================
+   TRANSFORM УТИЛИТЫ
+   ============================================ */
+
+.transform {
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.rotate-3 {
+    --tw-rotate: 3deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(3deg) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-rotate-3 {
+    --tw-rotate: -3deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(-3deg) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+/* ============================================
+   TRANSITION УТИЛИТЫ
+   ============================================ */
+
+.transition-colors {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.transition-shadow {
+    transition-property: box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.transition-transform {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.duration-300 {
+    transition-duration: 300ms;
+}
+
+/* ============================================
+   HOVER STATES
+   ============================================ */
+
+.hover\:opacity-80:hover {
+    opacity: 0.8;
+}
+
+.hover\:bg-primary-dark:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.hover\:bg-white\/20:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hover\:bg-beige:hover {
+    background-color: var(--color-beige);
+}
+
+.hover\:text-primary:hover {
+    color: var(--color-primary);
+}
+
+.hover\:text-white:hover {
+    color: var(--color-white);
+}
+
+.hover\:shadow-lg:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.hover\:shadow-xl:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hover\:shadow-2xl:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.hover\:bg-\[#6a7440\]:hover {
+    background-color: #6a7440;
+}
+
+.hover\:bg-\[#7a8450\]:hover {
+    background-color: #7a8450;
+}
+
+.hover\:text-\[#7a8450\]:hover {
+    color: #7a8450;
+}
+
+/* ============================================
+   FOCUS STATES
+   ============================================ */
+
+.focus\:outline-none:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.focus\:ring-2:focus {
+    box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.focus\:ring-\[#7a8450\]:focus {
+    box-shadow: 0 0 0 2px #7a8450;
+}
+
+.focus\:border-transparent:focus {
+    border-color: transparent;
+}
+
+/* ============================================
+   OBJECT FIT
+   ============================================ */
+
+.object-cover {
+    object-fit: cover;
+}
+
+.object-contain {
+    object-fit: contain;
+}
+
+/* ============================================
+   ASPECT RATIO
+   ============================================ */
+
+.aspect-\[4\/5\] {
+    aspect-ratio: 4 / 5;
+}
+
+/* ============================================
+   SPACE УТИЛИТЫ
+   ============================================ */
+
+.space-y-2 > * + * {
+    margin-top: 0.5rem;
+}
+
+.space-y-4 > * + * {
+    margin-top: 1rem;
+}
+
+.space-y-6 > * + * {
+    margin-top: 1.5rem;
+}
+
+/* ============================================
+   BACKDROP BLUR
+   ============================================ */
+
+.backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+}
+
+/* ============================================
+   CURSOR
+   ============================================ */
+
+.cursor-not-allowed {
+    cursor: not-allowed;
+}
+
+/* ============================================
+   RESIZE
+   ============================================ */
+
+.resize-none {
+    resize: none;
+}
+
+/* ============================================
+   GROUP HOVER
+   ============================================ */
+
+.group:hover .group-hover\:scale-110 {
+    transform: scale(1.1);
+}
+
+/* ============================================
+   МОДАЛЬНОЕ ОКНО
+   ============================================ */
+
+.modal {
+    display: none;
+}
+
+.modal.flex {
+    display: flex;
+}
+
+.modal__content {
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+@media (min-width: 768px) {
+    .md\:text-3xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+    
+    .md\:text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+    }
+    
+    .md\:text-5xl {
+        font-size: 3rem;
+        line-height: 1;
+    }
+    
+    .md\:text-6xl {
+        font-size: 3.75rem;
+        line-height: 1;
+    }
+    
+    .md\:flex-row {
+        flex-direction: row;
+    }
+}
+
+/* ============================================
+   СПЕЦИФИЧНЫЕ СТИЛИ ДЛЯ КОМПОНЕНТОВ
+   ============================================ */
+
+/* SVG fill цвета */
+.fill-\[#7a8450\] {
+    fill: #7a8450;
+}
+
+.fill-white {
+    fill: #ffffff;
+}
+
+/* Точные цвета из Tailwind классов */
+.text-\[#7a8450\] {
+    color: #7a8450;
+}
+
+.bg-\[#7a8450\] {
+    background-color: #7a8450;
+}
+
+.bg-\[#6a7440\] {
+    background-color: #6a7440;
+}
+
+.bg-\[#d4c5a9\] {
+    background-color: #d4c5a9;
+}
+
+.bg-\[#e6dcc8\] {
+    background-color: #e6dcc8;
+}
+
+.text-\[#d4c5a9\] {
+    color: #d4c5a9;
+}
+
+.hover\:bg-\[#e6dcc8\]:hover {
+    background-color: #e6dcc8;
+}
+
+.text-beige-light {
+    color: #d4c5a9;
+}
+
+/* Стили для кнопок */
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Стили для input и textarea */
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+/* Улучшенная читаемость */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Стили для списков */
+ul, ol {
+    list-style: none;
+}
+
+/* ============================================
+   ОБРАБОТКА КЛАССОВ С КВАДРАТНЫМИ СКОБКАМИ
+   Используем атрибутные селекторы для классов типа bg-[#7a8450]
+   ============================================ */
+
+/* Цвета фона */
+[class*="bg-[#7a8450]"] {
+    background-color: #7a8450 !important;
+}
+
+[class*="bg-[#6a7440]"] {
+    background-color: #6a7440 !important;
+}
+
+[class*="bg-[#d4c5a9]"] {
+    background-color: #d4c5a9 !important;
+}
+
+[class*="bg-[#e6dcc8]"] {
+    background-color: #e6dcc8 !important;
+}
+
+/* Цвета текста */
+[class*="text-[#7a8450]"] {
+    color: #7a8450 !important;
+}
+
+[class*="text-[#6a7440]"] {
+    color: #6a7440 !important;
+}
+
+[class*="text-[#d4c5a9]"] {
+    color: #d4c5a9 !important;
+}
+
+[class*="text-[#e6dcc8]"] {
+    color: #e6dcc8 !important;
+}
+
+/* Границы */
+[class*="border-[#7a8450]"] {
+    border-color: #7a8450 !important;
+}
+
+/* Hover состояния */
+[class*="hover:bg-[#6a7440]"]:hover {
+    background-color: #6a7440 !important;
+}
+
+[class*="hover:bg-[#7a8450]"]:hover {
+    background-color: #7a8450 !important;
+}
+
+[class*="hover:bg-[#e6dcc8]"]:hover {
+    background-color: #e6dcc8 !important;
+}
+
+[class*="hover:text-[#7a8450]"]:hover {
+    color: #7a8450 !important;
+}
+
+/* Focus состояния */
+[class*="focus:ring-[#7a8450]"]:focus {
+    box-shadow: 0 0 0 2px #7a8450 !important;
+}
+
+/* Градиенты */
+[class*="from-[#7a8450]"] {
+    --tw-gradient-from: #7a8450;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(122, 132, 80, 0));
+}
+
+[class*="to-[#6a7440]"] {
+    --tw-gradient-to: #6a7440;
+}
+
+[class*="from-[#d4c5a9]"] {
+    --tw-gradient-from: #d4c5a9;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(212, 197, 169, 0));
+}
+
+[class*="via-[#e6dcc8]"] {
+    --tw-gradient-to: #e6dcc8;
+}
+
+[class*="from-[#e6dcc8]"] {
+    --tw-gradient-from: #e6dcc8;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(230, 220, 200, 0));
+}
+
+/* Fill для SVG */
+[class*="fill-[#7a8450]"] {
+    fill: #7a8450 !important;
+}

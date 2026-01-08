@@ -1,0 +1,136 @@
+<!-- Order Form Modal -->
+<div id="order-modal" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+        <!-- Header -->
+        <div class="sticky top-0 bg-[#7a8450] text-white p-6 rounded-t-3xl flex items-center justify-between">
+            <h3 class="text-2xl">Оформить заказ</h3>
+            <button
+                id="close-modal-btn"
+                onclick="closeOrderForm()"
+                class="p-2 hover:bg-white/20 rounded-full transition-colors"
+                aria-label="Закрыть"
+            >
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="p-8">
+            <!-- Success message -->
+            <div id="success-message" class="hidden text-center py-12">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-10 h-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h4 class="text-2xl mb-2 text-gray-800">Заявка отправлена!</h4>
+                <p class="text-gray-600">
+                    Спасибо за ваш заказ. Мы свяжемся с вами в ближайшее время.
+                </p>
+            </div>
+
+            <!-- Form -->
+            <form id="order-form" class="space-y-6">
+                <!-- Name -->
+                <div>
+                    <label for="name" class="block text-sm mb-2 text-gray-700">
+                        Ваше имя *
+                    </label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="Иван Иванов"
+                    />
+                </div>
+
+                <!-- Phone -->
+                <div>
+                    <label for="phone" class="block text-sm mb-2 text-gray-700">
+                        Телефон *
+                    </label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="+7 (999) 999-99-99"
+                    />
+                </div>
+
+                <!-- Product -->
+                <div>
+                    <label for="product" class="block text-sm mb-2 text-gray-700">
+                        Выберите товар *
+                    </label>
+                    <select
+                        id="product"
+                        name="product"
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white"
+                    >
+                        <option value="">Выберите веник</option>
+                        <option value="Берёзовый веник - 350 руб.">Берёзовый веник - 350 руб.</option>
+                        <option value="Можжевеловый веник - 400 руб.">Можжевеловый веник - 400 руб.</option>
+                        <option value="Канадский дубовый (без жгута) - 400 руб.">Канадский дубовый (без жгута) - 400 руб.</option>
+                        <option value="Канадский дубовый (со жгутом) - 450 руб.">Канадский дубовый (со жгутом) - 450 руб.</option>
+                        <option value="Дуб классический - 400 руб.">Дуб классический - 400 руб.</option>
+                    </select>
+                </div>
+
+                <!-- Quantity -->
+                <div>
+                    <label for="quantity" class="block text-sm mb-2 text-gray-700">
+                        Количество *
+                    </label>
+                    <input
+                        type="number"
+                        id="quantity"
+                        name="quantity"
+                        min="1"
+                        required
+                        value="1"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    />
+                    <p class="text-sm text-gray-600 mt-2">
+                        При заказе от 5 веников — доставка бесплатная!
+                    </p>
+                </div>
+
+                <!-- Comment -->
+                <div>
+                    <label for="comment" class="block text-sm mb-2 text-gray-700">
+                        Комментарий к заказу
+                    </label>
+                    <textarea
+                        id="comment"
+                        name="comment"
+                        rows="4"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                        placeholder="Укажите адрес доставки и пожелания..."
+                    ></textarea>
+                </div>
+
+                <!-- Submit button -->
+                <button
+                    type="submit"
+                    class="w-full bg-[#7a8450] text-white py-4 rounded-xl hover:bg-[#7a8450]-dark transition-colors flex items-center justify-center gap-2 text-lg"
+                >
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                    Отправить заявку
+                </button>
+
+                <p class="text-sm text-gray-600 text-center">
+                    После отправки заявки мы свяжемся с вами в ближайшее время
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
