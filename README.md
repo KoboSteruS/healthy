@@ -148,11 +148,27 @@ export FLASK_ENV=production
 export SECRET_KEY=your-production-secret-key
 ```
 
-2. Используйте production WSGI сервер (например, Gunicorn):
+2. Используйте production WSGI сервер (Gunicorn):
+
+**Простой запуск:**
 ```bash
-pip install gunicorn
+gunicorn app:app
+```
+
+**С параметрами:**
+```bash
 gunicorn -w 4 -b 0.0.0.0:5000 app:app
 ```
+
+**С использованием конфигурационного файла:**
+```bash
+gunicorn -c gunicorn.conf.py app:app
+```
+
+**Переменные окружения:**
+- `PORT` - порт для запуска (по умолчанию 5000)
+- `FLASK_ENV` - режим работы (development/production)
+- `LOG_LEVEL` - уровень логирования (debug/info/warning/error)
 
 ## 🐛 Известные проблемы
 
