@@ -19,7 +19,7 @@ def run_flask():
     logger.info("Запуск Flask приложения...")
     app.run(
         host='0.0.0.0',
-        port=5000,
+        port=5001,
         debug=os.environ.get('FLASK_ENV') == 'development',
         use_reloader=False  # Отключаем автоперезагрузку, чтобы не конфликтовать с ботом
     )

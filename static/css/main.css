@@ -732,6 +732,10 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+.bg-transparent {
+    background-color: transparent;
+}
+
 .bg-beige\/30 {
     background-color: rgba(230, 220, 200, 0.3);
 }
@@ -875,6 +879,10 @@ body {
 
 .opacity-80 {
     opacity: 0.8;
+}
+
+.opacity-90 {
+    opacity: 0.9;
 }
 
 /* ============================================
@@ -1334,6 +1342,10 @@ ul, ol {
     background-color: #d4c5a9 !important;
 }
 
+[class*="bg-[#d4c5a9]/20"] {
+    background-color: rgba(196, 181, 153, 0.2) !important;
+}
+
 /* Цвета текста */
 [class*="text-[#7a8450]"] {
     color: #6a7440 !important;
@@ -1354,6 +1366,15 @@ ul, ol {
 /* Границы */
 [class*="border-[#7a8450]"] {
     border-color: #6a7440 !important;
+}
+
+[class*="border-[#d4c5a9]"] {
+    border-color: #d4c5a9 !important;
+}
+
+.hero-view-products-btn {
+    border: 2px solid #d4c5a9 !important;
+    background-color: transparent !important;
 }
 
 /* Hover состояния */
@@ -1405,4 +1426,34 @@ ul, ol {
 /* Fill для SVG */
 [class*="fill-[#7a8450]"] {
     fill: #6a7440 !important;
+}
+
+/* ============================================
+   ГРАДИЕНТ ТЕКСТА ДЛЯ HERO СЕКЦИИ
+   ============================================ */
+
+.hero-gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #d4c5a9 50%, #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+}
+
+/* Альтернативный вариант без анимации (если нужен статичный градиент) */
+.hero-gradient-text-static {
+    background: linear-gradient(135deg, #ffffff 0%, #d4c5a9 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
