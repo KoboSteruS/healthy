@@ -660,6 +660,10 @@ body {
     color: var(--color-gray-800);
 }
 
+.text-gray-900 {
+    color: var(--color-gray-900);
+}
+
 .text-primary {
     color: var(--color-primary);
 }
@@ -1205,12 +1209,41 @@ select {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #6b7280 !important;
+    opacity: 1;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
     outline: none;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+/* Убеждаемся, что все поля формы имеют белый фон и черный текст */
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+input[type="email"],
+textarea,
+select {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+input[type="text"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="number"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+    color: #6b7280 !important;
 }
 
 /* Улучшенная читаемость */
@@ -1222,6 +1255,61 @@ a {
 /* Стили для списков */
 ul, ol {
     list-style: none;
+}
+
+/* ============================================
+   СТИЛИ ДЛЯ ФОРМЫ ЗАКАЗА
+   ============================================ */
+
+/* Убеждаемся, что все тексты в форме видны */
+#order-modal,
+#order-modal * {
+    color: #000000;
+}
+
+#order-modal label {
+    color: #000000 !important;
+}
+
+#order-modal .text-gray-700 {
+    color: #000000 !important;
+}
+
+#order-modal .text-gray-600 {
+    color: #1a1b1c !important;
+}
+
+/* Фон формы всегда белый */
+#order-modal .bg-white {
+    background-color: #ffffff !important;
+}
+
+/* Поля ввода всегда с белым фоном и черным текстом */
+#order-modal input,
+#order-modal textarea,
+#order-modal select {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #c1c2c3 !important;
+}
+
+#order-modal input::placeholder,
+#order-modal textarea::placeholder {
+    color: #6b7280 !important;
+    opacity: 1;
+}
+
+#order-modal input:focus,
+#order-modal textarea:focus,
+#order-modal select:focus {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+/* Текст в select опциях */
+#order-modal select option {
+    background-color: #ffffff !important;
+    color: #000000 !important;
 }
 
 /* ============================================

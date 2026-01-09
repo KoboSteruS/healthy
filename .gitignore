@@ -35,6 +35,9 @@ logs/
 .env
 .env.local
 
+# Telegram bot
+chat_ids.json
+
 # IDE
 .vscode/
 .idea/

@@ -5,6 +5,7 @@ from flask import Flask, render_template, request, jsonify, send_from_directory
 from loguru import logger
 import os
 from typing import Dict, Any
+from telegram_service import TelegramService
 
 app = Flask(
     __name__,
@@ -21,6 +22,13 @@ logger.add(
     level="INFO",
     format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}"
 )
+
+# Инициализация Telegram сервиса
+TELEGRAM_BOT_TOKEN = os.environ.get(
+    'TELEGRAM_BOT_TOKEN', 
+    '8494693569:AAF5j_0AdDktzqyptK2_lygLlN-dgQra-wY'
+)
+telegram_service = TelegramService(TELEGRAM_BOT_TOKEN)
 
 
 @app.route('/')
@@ -57,8 +65,16 @@ def create_order():
         # Логирование заказа
         logger.info(f"Новый заказ: {data}")
         
-        # TODO: Здесь можно добавить отправку в Telegram бот
-        # Например, через requests к Telegram Bot API
+        # Отправка заявки в Telegram бот
+        try:
+            telegram_sent = telegram_service.send_order_notification(data)
+            if telegram_sent:
+                logger.info("Заявка успешно отправлена в Telegram")
+            else:
+                logger.warning("Не удалось отправить заявку в Telegram (нет подписчиков)")
+        except Exception as e:
+            logger.error(f"Ошибка при отправке заявки в Telegram: {e}")
+            # Не прерываем выполнение, заявка все равно считается принятой
         
         return jsonify({
             'success': True,
