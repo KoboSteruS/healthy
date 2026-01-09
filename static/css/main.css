@@ -3,34 +3,34 @@
    ============================================ */
 
 :root {
-    /* Цвета из оригинального дизайна */
-    --color-primary: #7a8450;
-    --color-primary-dark: #6a7440;
-    --color-beige: #e6dcc8;
-    --color-beige-light: #d4c5a9;
+    /* Цвета из оригинального дизайна (затемненные) */
+    --color-primary: #6a7440;
+    --color-primary-dark: #5a6430;
+    --color-beige: #d4c5a9;
+    --color-beige-light: #c4b599;
     --color-white: #ffffff;
     
-    /* Серые оттенки */
-    --color-gray-50: #f9fafb;
-    --color-gray-100: #f3f4f6;
-    --color-gray-200: #e5e7eb;
-    --color-gray-300: #d1d5db;
-    --color-gray-400: #9ca3af;
-    --color-gray-500: #6b7280;
-    --color-gray-600: #4b5563;
-    --color-gray-700: #374151;
-    --color-gray-800: #1f2937;
-    --color-gray-900: #111827;
+    /* Серые оттенки (затемненные) */
+    --color-gray-50: #f0f1f2;
+    --color-gray-100: #e8e9ea;
+    --color-gray-200: #d5d6d7;
+    --color-gray-300: #c1c2c3;
+    --color-gray-400: #8c8d8f;
+    --color-gray-500: #5b5c5e;
+    --color-gray-600: #3b3c3d;
+    --color-gray-700: #2d2e2f;
+    --color-gray-800: #1a1b1c;
+    --color-gray-900: #0e0f10;
     
-    /* Зеленые для статусов */
-    --color-green-100: #dcfce7;
-    --color-green-600: #16a34a;
-    --color-green-700: #15803d;
-    --color-green-800: #166534;
+    /* Зеленые для статусов (затемненные) */
+    --color-green-100: #cce5d3;
+    --color-green-600: #0f8a3a;
+    --color-green-700: #0e7033;
+    --color-green-800: #0d5526;
     
-    /* Оранжевые для статусов */
-    --color-orange-100: #ffedd5;
-    --color-orange-800: #9a3412;
+    /* Оранжевые для статусов (затемненные) */
+    --color-orange-100: #eed5b5;
+    --color-orange-800: #8a2e0f;
     
     /* Размеры */
     --container-max-width: 1200px;
@@ -741,12 +741,12 @@ body {
 }
 
 .from-\[#d4c5a9\] {
-    --tw-gradient-from: #d4c5a9;
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(212, 197, 169, 0));
+    --tw-gradient-from: #c4b599;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(196, 181, 153, 0));
 }
 
 .via-\[#e6dcc8\] {
-    --tw-gradient-to: #e6dcc8;
+    --tw-gradient-to: #d4c5a9;
 }
 
 .to-white {
@@ -754,12 +754,12 @@ body {
 }
 
 .from-\[#7a8450\] {
-    --tw-gradient-from: #7a8450;
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(122, 132, 80, 0));
+    --tw-gradient-from: #6a7440;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(106, 116, 64, 0));
 }
 
 .to-\[#6a7440\] {
-    --tw-gradient-to: #6a7440;
+    --tw-gradient-to: #5a6430;
 }
 
 .from-white {
@@ -768,8 +768,8 @@ body {
 }
 
 .from-\[#e6dcc8\] {
-    --tw-gradient-from: #e6dcc8;
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(230, 220, 200, 0));
+    --tw-gradient-from: #d4c5a9;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(212, 197, 169, 0));
 }
 
 /* ============================================
@@ -982,15 +982,15 @@ body {
 }
 
 .hover\:bg-\[#6a7440\]:hover {
-    background-color: #6a7440;
+    background-color: #5a6430;
 }
 
 .hover\:bg-\[#7a8450\]:hover {
-    background-color: #7a8450;
+    background-color: #6a7440;
 }
 
 .hover\:text-\[#7a8450\]:hover {
-    color: #7a8450;
+    color: #6a7440;
 }
 
 /* ============================================
@@ -1007,7 +1007,7 @@ body {
 }
 
 .focus\:ring-\[#7a8450\]:focus {
-    box-shadow: 0 0 0 2px #7a8450;
+    box-shadow: 0 0 0 2px #6a7440;
 }
 
 .focus\:border-transparent:focus {
@@ -1145,7 +1145,7 @@ body {
 
 /* SVG fill цвета */
 .fill-\[#7a8450\] {
-    fill: #7a8450;
+    fill: #6a7440;
 }
 
 .fill-white {
@@ -1154,35 +1154,35 @@ body {
 
 /* Точные цвета из Tailwind классов */
 .text-\[#7a8450\] {
-    color: #7a8450;
+    color: #6a7440;
 }
 
 .bg-\[#7a8450\] {
-    background-color: #7a8450;
-}
-
-.bg-\[#6a7440\] {
     background-color: #6a7440;
 }
 
+.bg-\[#6a7440\] {
+    background-color: #5a6430;
+}
+
 .bg-\[#d4c5a9\] {
-    background-color: #d4c5a9;
+    background-color: #c4b599;
 }
 
 .bg-\[#e6dcc8\] {
-    background-color: #e6dcc8;
+    background-color: #d4c5a9;
 }
 
 .text-\[#d4c5a9\] {
-    color: #d4c5a9;
+    color: #c4b599;
 }
 
 .hover\:bg-\[#e6dcc8\]:hover {
-    background-color: #e6dcc8;
+    background-color: #d4c5a9;
 }
 
 .text-beige-light {
-    color: #d4c5a9;
+    color: #c4b599;
 }
 
 /* Стили для кнопок */
@@ -1231,90 +1231,90 @@ ul, ol {
 
 /* Цвета фона */
 [class*="bg-[#7a8450]"] {
-    background-color: #7a8450 !important;
-}
-
-[class*="bg-[#6a7440]"] {
     background-color: #6a7440 !important;
 }
 
+[class*="bg-[#6a7440]"] {
+    background-color: #5a6430 !important;
+}
+
 [class*="bg-[#d4c5a9]"] {
-    background-color: #d4c5a9 !important;
+    background-color: #c4b599 !important;
 }
 
 [class*="bg-[#e6dcc8]"] {
-    background-color: #e6dcc8 !important;
+    background-color: #d4c5a9 !important;
 }
 
 /* Цвета текста */
 [class*="text-[#7a8450]"] {
-    color: #7a8450 !important;
-}
-
-[class*="text-[#6a7440]"] {
     color: #6a7440 !important;
 }
 
+[class*="text-[#6a7440]"] {
+    color: #5a6430 !important;
+}
+
 [class*="text-[#d4c5a9]"] {
-    color: #d4c5a9 !important;
+    color: #c4b599 !important;
 }
 
 [class*="text-[#e6dcc8]"] {
-    color: #e6dcc8 !important;
+    color: #d4c5a9 !important;
 }
 
 /* Границы */
 [class*="border-[#7a8450]"] {
-    border-color: #7a8450 !important;
+    border-color: #6a7440 !important;
 }
 
 /* Hover состояния */
 [class*="hover:bg-[#6a7440]"]:hover {
-    background-color: #6a7440 !important;
+    background-color: #5a6430 !important;
 }
 
 [class*="hover:bg-[#7a8450]"]:hover {
-    background-color: #7a8450 !important;
+    background-color: #6a7440 !important;
 }
 
 [class*="hover:bg-[#e6dcc8]"]:hover {
-    background-color: #e6dcc8 !important;
+    background-color: #d4c5a9 !important;
 }
 
 [class*="hover:text-[#7a8450]"]:hover {
-    color: #7a8450 !important;
+    color: #6a7440 !important;
 }
 
 /* Focus состояния */
 [class*="focus:ring-[#7a8450]"]:focus {
-    box-shadow: 0 0 0 2px #7a8450 !important;
+    box-shadow: 0 0 0 2px #6a7440 !important;
 }
 
 /* Градиенты */
 [class*="from-[#7a8450]"] {
-    --tw-gradient-from: #7a8450;
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(122, 132, 80, 0));
+    --tw-gradient-from: #6a7440;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(106, 116, 64, 0));
 }
 
 [class*="to-[#6a7440]"] {
-    --tw-gradient-to: #6a7440;
+    --tw-gradient-to: #5a6430;
 }
 
 [class*="from-[#d4c5a9]"] {
+    --tw-gradient-from: #c4b599;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(196, 181, 153, 0));
+}
+
+[class*="via-[#e6dcc8]"] {
+    --tw-gradient-to: #d4c5a9;
+}
+
+[class*="from-[#e6dcc8]"] {
     --tw-gradient-from: #d4c5a9;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(212, 197, 169, 0));
 }
 
-[class*="via-[#e6dcc8]"] {
-    --tw-gradient-to: #e6dcc8;
-}
-
-[class*="from-[#e6dcc8]"] {
-    --tw-gradient-from: #e6dcc8;
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(230, 220, 200, 0));
-}
-
 /* Fill для SVG */
 [class*="fill-[#7a8450]"] {
-    fill: #7a8450 !important;
+    fill: #6a7440 !important;
 }
